@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				font: 13px/26px "微软雅黑";
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			.typeList {
+				width: 540px;
+				height: 30px;
+				border: 1px solid #DFDFDF;
+				border-width: 1px solid #000;
+				margin: 50px auto;
+				overflow: hidden;
+			}
+			
+			.typeList ul {
+				height: 30px;
+				line-height: 30px;
+				padding-left: 15px;
+			}
+			
+			.typeList ul li {
+				margin-right: 12px;
+				float: left;
+				position: relative;
+			}
+			
+			.typeList ul li input {
+				display: none;
+			}
+			
+			.typeList ul li b {
+				width: 20px;
+				height: 20px;
+				background: url(images/checkbox.gif) no-repeat -12px -18px;
+				display: block;
+				position: absolute;
+				top: 6px;
+				left: 0;
+			}
+			
+			.typeList ul li b:hover {
+				background-position: -12px -118px;
+			}
+			
+			.typeList ul .select b,
+			.select:hover b {
+				background-position: -12px -218px;
+			}
+			
+			.typeList ul li label {
+				padding-left: 23px;
+			}
+			
+			p {
+				margin: 120px auto;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="typeList" id="zhankai">
+
+			<form action="#" method="post" name="typeList">
+				<ul id="checkList">
+					<li class="select"><input type="checkbox" name="typeList" id="xiao"><label for="xiao">消费者保障</label></li>
+					<li><input type="checkbox" name="typeList" id="broken"><label for="broken">破损补寄</label></li>
+					<li><input type="checkbox" name="typeList" id="sevendays"><label for="sevendays ">7天退货</label></li>
+					<li><input type="checkbox" name="typeList" id="good"><label for="good">正品保障</label></li>
+					<li><input type="checkbox" name="typeList" id="ele"><label for="ele">电子凭证</label></li>
+					<li><input type="checkbox" name="typeList" id="wang"><label for="wang">旺旺在线</label></li>
+					<li><input type="checkbox" name="typeList" id="pinpai"><label for="pinpai">品牌授权</label></li>
+					<li><input type="checkbox" name="typeList" id="pay"><label for="pay">货到付款</label></li>
+					<li><input type="checkbox" name="typeList" id="credit"><label for="credit">信用卡</label></li>
+				</ul>
+			</form>
+
+		</div>
+		<p id="click"><input type="button" value="展开" /></p>
+		<script type="text/javascript">
+			function addLoadEvent(func) {
+				var oldonload = window.onload;
+				//得到上一个onload事件的函数
+				if(typeof window.onload != 'function') {
+					//判断类型是否为‘function’，注意typeof返回的是字符串
+					window.onload = func;
+				} else {
+					window.onload = function() {
+						oldonload();
+						//调用之前覆盖的onload事件的函数
+						func();
+					}
+				}
+			}
+
+			//创建b标签
+
+			var Oclick = document.getElementById('click');
+
+			Oclick.onclick = function() {
+				document.getElementById('zhankai').style.height = 60 + 'px';
+			}
+
+			function creatTag() {
+				var li = document.getElementById('checkList').getElementsByTagName('li');
+				var label;
+				for(var i = 0; i < li.length; i++) {
+					label = li[i].getElementsByTagName('label');
+					var bTag = document.createElement('b');
+					li[i].insertBefore(bTag, label[0]);
+				}
+			}
+
+			function checklist() {
+				var li = document.getElementById('checkList').getElementsByTagName('li');
+
+				//点击变换效果
+				for(var i = 0; i < li.length; i++) {
+					li[i].onclick = function() {
+						if(this.className == 'select') {
+							this.className = null;
+						} else {
+							this.className = 'select'
+						}
+					}
+				}
+			}
+			addLoadEvent(creatTag);
+			addLoadEvent(checklist);
+		</script>
+	</body>
+
+</html>

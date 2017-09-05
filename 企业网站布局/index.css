@@ -1,0 +1,289 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	font-family: "微软雅黑";
+}
+
+body {
+	background-color: #F5F5F5;
+}
+
+ul {
+	list-style: none;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #8e8e8e;
+}
+
+a:hover,
+a:active {
+	color: red;
+}
+
+.top {
+	width: 100%;
+	height: 27px;
+	background: url(images/top_bg.jpg) repeat-x;
+}
+
+.top_content {
+	width: 1000px;
+	margin: 0 auto;
+	height: 27px;
+}
+.top_content ul{
+	height: 27px;
+}
+.top_content li {
+	display: inline-block;
+	line-height: 27px;
+	margin-left: 20px;
+}
+.top_content li:last-child{
+	float: right;
+	height: 27px;
+	line-height: 27px;
+	margin-right: 20px;
+	background: url(images/tel.jpg) no-repeat;
+	padding-left: 30px;
+	background-size: 25px;
+}
+
+.tel {
+	font-size: 10px;
+	color: #c00;
+	
+}
+.tel img{
+	vertical-align:middle;
+}
+
+.nav {
+	width: 1000px;
+	height: 40px;
+	background: #a78e44;
+	margin: 0 auto;
+}
+
+.nav ul li {
+	float: left;
+	margin-left: 10px;
+	text-align: center;
+	width: 80px;
+	line-height: 40px;
+}
+
+.nav ul li a {
+	font-size: 18px;
+	color: #FFFFFF;
+}
+
+.nav ul li a:hover {
+	color: red;
+}
+
+.nav input {
+	height: 25px;
+	width: 180px;
+	margin: 7px 0 0 150px;
+	background: url(images/search.jpg) right no-repeat #FFFFFF;
+	border: none;
+	border-radius: 5px;
+	padding-right: 25px;
+}
+
+.ad {
+	height: 310px;
+	overflow: hidden;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.massage {
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.massage_1 {
+	width: 340px;
+	border: 1px solid #E8E8E8;
+}
+
+.massage_2 {
+	width: 410px;
+	border: 1px solid #e8e8e8;
+}
+
+.massage_3 {
+	width: 243px;
+	border: 1px solid #E8E8E8;
+}
+
+.massage_1,
+.massage_2,
+.massage_3 {
+	height: 250px;
+	float: left;
+}
+
+.title {
+	height: 30px;
+	margin-top: 5px;
+	border-bottom: 1px solid #E8E8E8;
+	margin-bottom: 5px;
+}
+
+.title h3 {
+	line-height: 30px;
+	float: left;
+	margin-left: 20px;
+}
+
+.title span {
+	float: right;
+	line-height: 30px;
+	margin-right: 20px;
+}
+
+.pic_news {
+	display: inline-flex;
+}
+
+.pic_news img {
+	margin-left: 5px;
+}
+
+.news {
+	line-height: 23px;
+	margin-left: 13px;
+}
+
+.news h3,
+.news p:last-child {
+	color: indianred;
+}
+
+.prize ul li {
+	border-bottom: 1px dashed #CCCCCC;
+	line-height: 20px;
+	margin-top: 6px;
+}
+
+.prize ul li:last-child {
+	border: none;
+}
+
+.prize span {
+	float: right;
+	margin-right: 10px;
+}
+
+.web ul li {
+	display: inline-block;
+	margin-left: 30px;
+	margin-top: 40px;
+}
+
+.video_content {
+	text-align: center;
+}
+
+.massage_3 img {
+	margin: 0 auto;
+	display: block;
+}
+
+.copyright {
+	width: 100%;
+	height: 200px;
+	background-color: #E8E8E8;
+	margin-top: 10px;
+}
+
+.copy_content {
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.copy_content li {
+	display: inline-block;
+	width: 196px;
+	background: url(images/line.png) no-repeat right center;
+	text-align: center;
+	line-height: 30px;
+}
+
+.copy_content li a {
+	font-size: 18px;
+}
+
+.copy_content li ul li a {
+	font-size: 14px
+}
+/**/
+.msg{
+	width: 1000px;
+	margin: 0 auto;
+}
+.title_1{
+	width: 250px;
+	text-align: center;
+	overflow: hidden;
+	float: left;
+	border-right: 1px solid #E8E8E8;
+}
+.title_1 h2{
+	font-size: 18px;
+	font-weight: 700;
+	border-bottom: 2px solid #E8E8E8;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.title_1 a{
+	font-size: 14px;
+	line-height: 40px;
+	margin-left: -30px;
+	background: url(images/arrow.jpg) no-repeat left;
+	padding-left: 15px;
+}
+.news_1 {
+	width: 1000px;
+}
+
+.news_1 h2{
+	font-size: 18px;
+	font-weight: 700;
+	border-bottom: 2px solid palevioletred;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-indent: 100px;
+}
+.news_1 a{
+	font-size: 12px;
+	line-height: 25px;
+	margin-left: 90px;
+	background: url(images/arrow.jpg) no-repeat left;
+	padding-left: 15px;
+}
+
+.news_1 span{
+	float: right;
+	margin-right: 20px;
+	display: inline-block;
+}
+.page{
+	height: 40px;
+	margin-top: 10px;
+	text-align: center;
+}
+.page a {
+	border:1px solid #E8E8E8;
+	margin: 5px;
+	padding: 5px 10px;
+}

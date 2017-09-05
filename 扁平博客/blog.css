@@ -1,0 +1,316 @@
+a:hover 
+{
+	color: #665ec7;
+}
+nav
+{
+	background: transparent;
+	height: 50px;
+}
+#banner
+{
+	background:transparent;
+	height: 700px;
+}
+nav ul 
+{
+	list-style: none;
+	margin: 0;
+	float: right;
+}
+nav ul li ,.logo
+{
+	line-height: 50px;
+	display: inline-block;
+	
+	margin-right: 20px;
+}
+nav ul li a  
+{
+	line-height: inherit;
+	text-decoration: none;
+	display: inline-block;
+	height: inherit;
+	color: #fff;
+
+}
+nav ul li.logo
+{
+	float: left;
+}
+#banner .inner
+{
+	max-width: 300px;
+	/*给容器一个最大 宽度*/
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 160;
+}
+.inner h1
+{
+     margin: 0;
+}
+button
+{
+	border: none;
+	background: #333;
+	color: #eee;
+	padding: 10px;
+}
+#banner button
+{
+	padding: 15px 35px;
+	border-radius: 20px;
+}
+#banner .inner .more 
+{
+	margin-top: 280px;
+}
+#banner .inner .sub_header
+{
+     line-height: 30px;
+     margin: 30px 0;
+}
+.logo a
+{
+	font-size: 20px;
+	font-weight: 700px
+	letter-spacing:1px;
+	padding: 10px;
+	text-decoration: none;
+	color: #fff;
+}
+.section_1
+{
+	text-align: center;
+	background: #bbbab0;
+	color: #FFF;
+	padding: 100px 0;
+}
+.section_1 .wrapper
+{
+     max-width: 1000px;
+     margin: 0 auto;
+}
+h1
+{
+	padding: 12px;
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+}
+h2
+{
+	font-size: 30px;
+}
+.hr 
+{
+	height: 2px;
+	width: 100%;
+	margin: 20px auto;
+}
+.section_1 .wrapper .hr 
+{
+	background: #000;
+	width: 60%;
+}
+.sub_header_1
+{
+
+}
+.wrapper .icon_group .icon 
+{
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+	background: #f2f2f2;
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	     -o-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	margin: 20px;        
+}
+.icon_group
+{
+	margin-top: 60px;
+}
+.section_2
+{
+	background: #252f34;
+	color: #fff;
+}
+.section_2 .img_section
+{
+	width: 45%;
+}
+.img_section img 
+{
+	width: 100%;
+	/*不超过父元素，和父元素平齐*/
+}
+.text_section
+{
+	width: 55%;
+	position: relative;
+	top: 68px;
+	left: 50px;
+}
+.text_section h2
+{
+    border-bottom: 20px;
+}
+.text_section p 
+{
+     font-size: 18px;
+     letter-spacing: 1px;
+}
+.article
+{
+	background-color: #CCC;
+	background: #cfd355;
+}
+.article > div
+{
+	float: left;
+	font-size: 0;
+}
+.article:after
+{
+     content: '';
+     display: block;
+     clear: both;
+}
+.text_section .sub_header
+{
+	font-size: 18px;
+	/*letter-spacing: 1px;*/
+}
+.article:nth-child(odd)
+{
+    background: #E3E3E3;
+	background-color: rgba(255,255,255,0.05);
+}
+
+.article:nth-child(1)
+{
+    background: #e3e3e3;
+	background-color: rgba(255,255,255,0.05);
+}
+.section_3
+{
+	padding: 80px;
+	background: #55bdd3;
+	color: #fff;
+}
+.section_3 .heading-wrapper
+{
+	text-align: center;
+}
+.section_3 hr 
+{
+	background: #559cd3;
+	width: 60%;
+
+}
+.card
+{
+	float: left;
+	text-align: center;
+	width: 50%;
+	height: 300px;
+	padding: 50px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	
+}
+.clearfix:after
+{
+	clear: both;
+	content: '';
+	display: block;
+}
+h3
+{
+	font-size: 24px;
+}
+ p 
+{
+	/*letter-spacing: 1px;*/
+	font-size: 18px;
+}
+.card:first-child
+{
+	background:rgba(0,0,0,0.05);
+}
+.card:nth-child(2)
+{
+	background: rgba(0,0,0,0.1);
+}
+.card:nth-child(3)
+{
+	background: rgba(0,0,0,0.2);
+}
+.card:nth-child(4)
+{
+	background: rgba(0,0,0,0.3);
+}
+.card:nth-child(5)
+{
+	background: rgba(0,0,0,0.4);
+}
+.card:nth-child(6)
+{
+	background: rgba(0,0,0,0.5);
+}
+ul 
+{
+	margin: 0;
+}	
+ul.share
+{
+	margin: 0 auto;
+	display: block;
+	width: 1000px;
+	padding: 50px;
+}
+.share li 
+{
+	display: inline;
+	padding: 10px;
+}
+footer
+{
+	background: #333;
+	color: #fff;
+	min-height: 200px;
+	text-align: center;
+}
+.copy
+{
+	border-bottom: 20px;
+}
+.main 
+{
+	background: #444 url(images/2.jpg) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
+}
+header 
+{
+	background: rgba(0,0,0,0.3);
+}
+.icon img
+{
+	position: absolute;
+	top: 15px;
+	left: 20px;
+	-webkit-transform: rotate(-45deg);
+	   -moz-transform: rotate(-45deg);
+	    -ms-transform: rotate(-45deg);
+	     -o-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+}

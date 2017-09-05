@@ -1,0 +1,82 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+.main
+{
+	width: 500px;
+	height: 500px;
+	margin: 100px auto;
+	
+}
+.body 
+{
+	width:250px ;
+	height: 500px;
+	opacity: 0.8;
+	background:#f9f9fb;
+	margin:0 auto;
+	border-radius: 30px;
+	border-width:8px;
+        border-style:solid;
+        -moz-border-top-colors:#c1c1c1 #cccccc #cccccc #c1c1c1 #d2d1d6 #c7c7c9 #bcbcbd #afafb0;
+        -moz-border-right-colors:#c1c1c1 #cccccc #cccccc #c1c1c1 #d2d1d6 #c7c7c9 #bcbcbd #afafb0;
+        -moz-border-bottom-colors:#c1c1c1 #cccccc #cccccc #c1c1c1 #d2d1d6 #c7c7c9 #bcbcbd #afafb0;
+        -moz-border-left-colors:#c1c1c1 #cccccc #cccccc #c1c1c1 #d2d1d6 #c7c7c9 #bcbcbd #afafb0;
+
+}
+.top_1
+{
+	width: 6px;
+	height: 6px;
+	border-radius: 3px;
+	background:#000;
+	margin: 0px auto ;
+	position: relative;
+	top: 20px;
+}
+.top_2
+{
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: #000;
+	position: absolute;
+	top: 136px;
+	left:684px;
+}
+.top_3
+{
+	width: 45px;
+	height: 4px;
+	border-radius: 45px;
+	background: #000;
+	position: absolute;
+	top: 139px;
+	left: 700px;
+
+}
+.border
+{
+	height: 370px;
+	width: 200px;
+	
+	border: 1px solid #000;
+	margin: 0 auto;
+	position: absolute;
+	top: 164px;
+	left: 620px;
+}
+.button
+{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	border: 2px solid #000;
+	background:  #f9f9fb;
+	margin: 0 auto;
+	position: absolute;
+	top: 546px;
+	left:700px;
+}

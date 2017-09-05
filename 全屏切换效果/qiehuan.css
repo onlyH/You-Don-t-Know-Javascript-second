@@ -1,0 +1,46 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+html,body 
+{
+	height: 100%;
+
+}
+#container,.section_group,.section
+{
+	height: 100%;
+}
+#section0,#section1,#section2,#section3
+{
+	background: #000;
+	color: #fff;
+	background-size: cover;
+	background-position: 50% 50%;
+	text-align: center;
+}
+#section0
+{
+	background-image: url(images/0.jpg);
+}
+#section1
+{
+	background-image: url(images/1.jpg) ;
+}
+#section2
+{
+	background-image: url(images/2.jpg) ;
+}
+#section3
+{
+	background-image: url(images/3.jpg) ;
+}
+.left
+{
+	float: left;
+	width: 25%;
+	/*100/4张图片*/
+}
+
+

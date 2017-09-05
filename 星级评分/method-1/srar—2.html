@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>star comment</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				list-style: none;
+			}
+			
+			.rating {
+				width: 400px;
+				height: 65px;
+				margin: 100px auto;
+			}
+			
+			.rating-item {
+				float: left;
+				width: 65px;
+				height: 65px;
+				background: url(star.jpg) no-repeat;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul class="rating" id="rating">
+			<li class="rating-item" title="很好"></li>
+			<li class="rating-item" title="不好"></li>
+			<li class="rating-item" title="一般"></li>
+			<li class="rating-item" title="好"></li>
+			<li class="rating-item" title="很好"></li>
+		</ul>
+		<ul class="rating" id="rating2 ">
+			<li class="rating-item" title="很好"></li>
+			<li class="rating-item" title="不好"></li>
+			<li class="rating-item" title="一般"></li>
+			<li class="rating-item" title="好"></li>
+			<li class="rating-item" title="很好"></li>
+		</ul>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script>
+			//			全局变量--闭包解决
+			var rating = (function() {
+				var lightOn = function($item, num) {
+					$item.each(function(index) { //获取所有星星
+						if(index < num) {
+							$(this).css('background-position', '0 -68px')
+						} else {
+							$(this).css('background-position', '0 0')
+						}
+					})
+				};
+
+				var init = function(el, num) {
+					var $rating = $(el),
+						$item = $rating.find('.rating-item');
+
+					//初始化
+					lightOn($item, num);
+					//事件委托
+					$rating.on('mousemove', '.rating-item', function() {
+							lightOn($iten, $(this).index() + 1);
+						}).on('click', '.rating-item', function() {
+							num = $(this).index() + 1;
+						})
+						.on('mouseout', function() {
+							lightOn($item, ßnum);
+
+						})
+				};
+				//				jq插件
+				$.fn.extend({
+					rating: function(num) {
+						return this.each(function() {
+							init(this, num);
+						})
+					}
+				})
+				return {
+					init: init
+				}
+
+			})();
+			rating.init('#rating', 2);
+			//			rating.init('#rating2', 3);
+			$('#rating2').rating(4)
+		</script>
+	</body>
+
+</html>
