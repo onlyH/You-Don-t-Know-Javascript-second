@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!--展示的这些行为实际上是迭代器的概念-->
+		<script type="text/javascript">
+			function list() {
+				this.listsize = 0; //列表的元素个数(属性)
+				this.pos = 0; //(属性)列表的当前位置
+				this.datastore = []; //初始化一个空数组来保存列表的元素
+				this.clear = clear; //清空列表中的所有元素
+				this.find = find;
+				this.toString = toString; //返回列表的字符串形式
+				this.insert = insert; //在现有元素后插入新元素
+				this.append = append; //在列表的末尾添加新元素
+				this.remove = remove; //从列表中删除元素
+				this.front = front; //将列表的当前位置设移动到第一个元素
+				this.end = end; //将列表的当前位置移动到最后一个元素
+				this.prev = prev; //将当前位置后移一位
+				this.next = next; //将当前位置前移一位
+				this.length = length; //返回列表中元素的个数
+				this.currpos = currpos; //返回列表的当前位置
+				this.moveto = moveto; //将当前位置移动到指定位置
+				this.getElement = getElement; //返回当前位置的元素
+				this.contains = contains; //判断给定值是否在列表中
+			}
+			//append:给列表添加元素,当新元素就位后，变量 listSize 加 1。
+			function append(element) {
+				this.datastore[this.listsize++] = element;
+			}
+			//remove:从列表中删除元素,find:在列表中查找某一元素,该方法用于查找要删除的元素:
+			function find(element) {
+				for(var i = 0; i < this.datastore.length; ++i) {
+					if(this.datastore[i] == element) {
+						return i;
+					}
+				}
+				return -1;
+			}
+			//remove() 方法使用 find() 方法返回的位置对数组 dataStore 进行截取。数组改变后，将变 量 listSize 的值减 1，以反映列表的最新长度。
+			function remove(element) {
+				var foundAt = this.find(element);
+				if(foundAt > -1) {
+					this.datastore.splice(foundAt, 1);
+					--this.listsize;
+					return false;
+				}
+				return false;
+			}
+
+			function length() {
+				return this.listsize;
+			}
+
+			//toString:显示列表中的元素
+			function toString() {
+				return this.datastore;
+			}
+
+			function insert(element, after) {
+				var insertpos = this.find(after);
+				if(insertpos > -1) {
+					this.datastore.splice(insertpos + 1, 0, element);
+					++this.listsize;
+					return true;
+				}
+				return false;
+			}
+			//insert() 方法用到了 find() 方法，find() 方法会寻找传入的 after 参数在列 表中的位置，找到该位置后，使用 splice() 方法将新元素插入该位置之后，然后将变量 listSize 加 1 并返回 true，表明插入成功。
+
+			function clear() {
+				delete this.datastore;
+				this.datastore = [];
+				this.listsize = this.pos = 0;
+			}
+			//clear() 方法使用 delete 操作符删除数组 dataStore，接着在下一行创建一个空数组。最后一行将 listSize 和 pos 的值设为 1，表明这是一个新的空列表。
+
+			function contains(element) {
+				for(var i = 0; i < this.datastore.length; ++i) {
+					if(this.datastore[i] == element) {
+						return true;
+					}
+				}
+				return false;
+			}
+			//遍历列表
+			//最后的一组方法允许用户在列表上自由移动，最后一个方法 getElement() 返回列表的当前元素:
+			function front() {
+				this.pos = 0;
+			}
+
+			function end() {
+				this.pos = this.listsize - 1;
+			}
+
+			function prev() {
+				if(this.pos > 0) {
+					--this.pos;
+				}
+			}
+
+			function next() {
+				if(this.pos < this.listsize - 1) {
+					++this.pos;
+				}
+			}
+
+			function currpos() {
+				return this.pos;
+			}
+
+			function moveto(position) {
+				this.pos = position;
+			}
+
+			function getElement() {
+				return this.datastore[this.pos];
+			}
+
+			var names = new list();
+			names.append('cydia');
+			names.append('ss');
+			names.append('dd');
+			names.append('ee');
+			console.log(name.toString());
+			names.front(); //cyida
+			console.log(names.getElement());
+			names.end(); //ee
+			console.log(names.getElement())
+			names.prev(); //dd
+			console.log(names.getElement())
+			names.next(); //ee
+			console.log(names.getElement());
+			names.next();
+			names.next();
+			names.prev();
+			console.log(names.getElement()); //dd
+
+			//迭代器遍历列表的例子:在 for 循环的一开始，将列表的当前位置设置为第一个元素。只要 currPos 的值小于列表的长度，就一直循环，每一次循环都调用 next() 方法将当前位置向前移动一位。
+			for(names.front(); names.currpos() < names.length; name.next()) {
+				console.log(names.getElement());
+			}
+
+			//后向前遍历列表:循环从列表的最后一个元素开始，当当前位置大于或等于 0 时，调用 prev() 方法后移一位。迭代器只是用来在列表上随意移动，而不应该和任何为列表增加或删除元素的方法一起 使用。
+			for(names.end(); names.currpos() >= 0; names.prev()) {
+				console.log(names.getElement());
+			}
+			
+			
+		</script>
+	</body>
+
+</html>

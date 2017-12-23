@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20%;
+            font-size: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<p id="show">当前时间</p>
+<script>
+    window.onload = function () {
+        setTime();
+    }
+
+    var a = new Array(7);
+    a[0] = "星期日";
+    a[1] = "星期一";
+    a[2] = "星期二";
+    a[3] = "星期三";
+    a[4] = "星期四";
+    a[5] = "星期五";
+    a[6] = "星期六";
+    function setTime() {
+        var myDate = new Date();
+        var year = myDate.getFullYear();
+        var month = myDate.getMonth() + 1;
+        var data = myDate.getDate();
+        var hour = myDate.getHours();
+        var m = myDate.getMinutes();
+        var s = myDate.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        var day = myDate.getDay();
+        document.getElementById("show").innerHTML = year + "年" + month + "月" + data + "日" + hour + ":" + m + ":" + s + " " + a[day];
+        setTimeout(setTime, 500);
+
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }else {
+            return i;
+        }
+        return i;
+    }
+</script>
+</body>
+</html>

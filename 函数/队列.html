@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			/*
+															 var a = [];
+															 a.push('a');
+															 a.push('c');
+															 a;      // (2) ["a", "c"]
+															 
+															 * */
+			function queue() {
+				this.datastore = [];
+				this.enqueue = enqueue;
+				this.dequeue = dequeue;
+				this.front = front;
+				this.back = back;
+				this.toString = toString; //显示队列所有元素
+				this.empty = empty;
+			}
+			//enqueue() 方法向队尾添加一个元素:
+			function enqueue(element) {
+				this.datastore.push(element);
+			}
+
+			function dequeue() {
+				return this.datastore.shift();
+			}
+			//读取队首和队尾
+			function front() {
+				return this.datastore[0];
+			}
+
+			function back() {
+				return this.datastore[this.datastore.length - 1];
+			}
+
+			function toString() {
+				var str = '';
+				for(var i = 0; i < this.datastore.length; ++i) {
+					str += this.datastore[i] + '\n';
+				}
+				return str;
+			}
+
+			function empty() {
+				if(this.datastore.length == 0) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+
+			//test
+			var q = new queue();
+			q.enqueue('aa');
+			q.enqueue('bb');
+			q.enqueue('cc');
+			q.enqueue('dd');
+			q.enqueue('ee');
+			console.log(q.toString())
+			console.log(q.dequeue())
+			//可以模拟舞池男女配对问题
+
+			//使用队列对数据进行排序--基数排序
+			//下面是根据相应位(个位或十位)上的数值，将数字分配到相应队列的函数:
+			function distr(nums, queues, n, digit) {
+				// 参数 digit 表示个位或十位上的值
+				for(var i = 0; i < n; ++i) {
+					if(digit == 1) {
+						queues[nums[i] % 10].enqueue(nums[i]);
+					} else {
+						queues[Math.floor(nums[i] / 10)].enqueue(nums[i])
+					}
+				}
+			}
+
+			function collet(queues, nums) {
+				var i = 0;
+				for(var digit = 0; digit < 10; ++digit) {
+					while(!queues[digit].empty()) {
+						nums[i++] = queues[digit].dequeue()
+					}
+				}
+			}
+
+			function despArray(arr) {
+				for(var i = 0; i < arr.length; ++i) {
+					console.log(arr[i] + '')
+				}
+			}
+			//主程序
+			var queues = [];
+			for(var i = 0; i < 10; ++i) {
+				queues[i] = new queue();
+			}
+			var nums = [];
+			for(var i = 0; i < 10; ++i) {
+				nums[i] = Math.floor(Math.floor(Math.random() * 101));
+			}
+			console.log('before radix sort :');
+			despArray(nums);
+			distr(nums, queues, 10, 1);
+			collet(queues, nums);
+			distr(nums, queues, 10, 10);
+			collet(queues, nums);
+			console.log("\n\nAfter radix sort: ");
+			despArray(nums)
+
+			//优先队列
+			function patient(name, code) {
+				this.name = name;
+				this.code = code; //优先级 int
+			}
+			//定义 dequeue() 方法，使其删除队列中拥有最高优先级的素。优先码的值最小的元素优先级最高。新的 dequeue() 方法遍历队列的底层存储数组，从中找出优先码最低的元素，然后使用数组的 splice() 方法删除优先级最高的元素。
+			function dequeue() {
+				var priority = this.datastore[0].code; //获取第一个元素的整数值
+				for(var i = 0; i < this, datastore.length; ++i) {
+					if(this.datastore[i].code < priority) {
+						//如果有一个元素小于第一个元素的值，那么替换为第一个元素。
+						priority = i;
+					}
+				}
+				return this.datastore.splice(priority, 1)
+				//返回包含一个元素的数组，从队列中删除的元素
+			}
+			//定义 toString() 方法来显示 Patient 对象。
+			function tostring() {
+				var str = '';
+				for(var i = 0; i < this.datastore.length; ++i) {
+					str += this.datastore[i].name + 'code:' + this.datastore[i].code + '\n';
+				}
+				return str;
+			}
+			var p = new patient('smith', 5);
+			var ed = new queue();
+			ed.enqueue(p);
+			p = new patient('jones', 4);
+			ed.enqueue();
+
+			p = new patient('ff', 6);
+			ed.enqueue(p);
+			p = new patient('dd', 1);
+			ed.enqueue(p);
+			p = new patient('qqq', 1);
+			ed.enqueue();
+			console.log(ed.tostring());
+
+			var seen = ed.dequeue();
+			console.log('patient being treated :' + seen[0].name);
+			console.log('patients watiting to be seen :');
+			console.log(ed.tostring());
+
+			var seen = ed.dequeue();
+			console.log('patient being treated:' + seen[0].name);
+			console.log('patient waiting to be seen :');
+			console.log(ed.tostring());
+
+			var seen = ed.dequeue();
+			console.log('patient being treated :' + seen[0].name);
+			console.log('patient waiting to be seen:');
+			console.log(ed.tostring())
+		</script>
+	</body>
+
+</html>

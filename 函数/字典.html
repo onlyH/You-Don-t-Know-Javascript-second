@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Dictionary() {
+        this.dataStore = [];
+        this.add = add;
+        this.remove = remove;
+        this.showAll = showAll;
+        this.find = find;
+    }
+    function add(key, value) {
+        //键是值在字典中的索引
+        this.dataStore[key] = value;
+    }
+    function find(key) {
+        //返回和其关联的值
+        return this.dataStore[key];
+    }
+    function remove(key) {
+        delete this.dataStore[key];
+    }
+    function showAll() {
+        for (var key in Object.keys(this.dataStore)) {
+            console.log(key + " -> " + this.dataStore[key]);
+        }
+    }
+    var pbook = new Dictionary();
+    pbook.add("Mike", "123");
+    pbook.add("David", "345");
+    pbook.add("Cynthia", "456");
+    console.log("David's extension: " + pbook.find("David"));
+    pbook.remove("David");
+    console.log(pbook.showAll())
+</script>
+</body>
+</html>

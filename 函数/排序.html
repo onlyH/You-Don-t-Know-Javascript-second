@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function CArray(numElements) {
+        this.dataStore = [];
+        this.pos = 0;
+        this.numElements = numElements;
+        this.insert = insert;
+        this.toString = toString;
+        this.clear = clear;
+        this.setData = setData;
+        this.swap = swap;
+        this.bubbleSort = bubbleSort;
+        this.selectionSort = selectionSort;
+
+        for (var i = 0; i < numElements.length; ++i) {
+            this.dataStore[i] = i;
+        }
+    }
+    //setData() 函数生成了存储在数组中的随机数字。Math 类的 random() 函数会生 成[0, 1)区间内的随机数字。换句话说，random()函数生成的随机数字大于等于0，但不 会等于 1。这样生成的随机数字并不是非常有用，因此我们将随机数字乘想要的元素然后加 1，最后再用 Math 类的 floor() 函数确定最终结果。正如上面的输出所示，这个 公式可以成功地生成 1~100 的随机数字集合。
+    function setData() {
+        for (var i = 0; i < this.numElements; ++i) {
+            this.dataStore[i] = Math.floor(Math.random() * (this.numElements + 1))
+        }
+    }
+    function clear() {
+        for (var i = 0; i < this.dataStore.length; ++i) {
+            this.dataStore[i] = 0;
+        }
+    }
+    function insert(element) {
+        this.dataStore[this.pos++] = element;
+    }
+    function toString() {
+        var restr = '';
+        for (var i = 0; i < this.dataStore.length; ++i) {
+            restr += this.dataStore[i] + '';
+            if (i > 0 && i % 10 == 0) {
+                restr += '\n';
+            }
+        }
+        return restr;
+    }
+    function swap(arr, index1, index2) {
+        var temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+    }
+
+    var numElement = 100;
+    var myNum = new CArray(numElement);
+    myNum.setData();
+    console.log(myNum.toString());
+
+    //冒泡
+    function bubbleSort() {
+        var numElements = this.dataStore.length;
+        var temp;
+        for (var outer = numElements; outer >= 2; --outer) {
+            for (var inner = 0; inner <= outer - 1; ++inner) {
+                if (this.dataStore[inner] > this.dataStore[inner + 1]) {
+                    swap(this.dataStore, inner, inner + 1);
+                }
+            }
+            console.log(this.toString())
+        }
+    }
+    var numElements = 10;
+    var mynums = new CArray(numElements);
+    mynums.setData();
+    console.log(mynums.toString());
+    mynums.bubbleSort();
+    console.log(mynums.toString())
+
+    //选择
+    //    选择排序从数组的开头开始，将第一个元素和其他元 素进行比较。检查完所有元素后，最小的元素会被放到数组的第一个位置，然后算法会从 第二个位置继续。这个过程一直进行，当进行到数组的倒数第二个位置时，所有的数据便 完成了排序。
+    function selectionSort() {
+        var min, temp;
+        for (var outer = 0; outer <= this.dataStore.length - 2; ++outer) {
+            min = outer;
+            for (var inner = outer + 1;
+                 inner <= this.dataStore.length - 1; ++iner) {
+                if (this.dataStore[inner] < this.dataStore[min]) {
+                    min = inner;
+                }
+                swap(this.dataStore, outer, min);
+            }
+        }
+    }
+    console.log(this.toString())
+
+    //插入
+    function insertionSort() {
+        var temp, inner;
+        for (var outer = 1; outer <= this.dataStore.length - 1; ++outer) {
+            temp = this.dataStore[outer];
+            inner = outer;
+            while (inner > 0 && (this.dataStore[inner - 1] >= temp)) {
+                this.dataStore[inner] = this.dataStore[inner - 1];
+                --inner;
+            }
+            this.dataStore[inner] = temp;
+        }
+    }
+</script>
+</body>
+</html>

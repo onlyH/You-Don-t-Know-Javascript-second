@@ -1,0 +1,39 @@
+{
+  "status": 1,
+  "result": {
+    "totalMoney": 59,
+    "list": [
+      {
+        "productId": "600100002115",
+        "productName": "PSIGEAR 抗冲击手套",
+        "productPrice": 19,
+        "productQuentity": 1,
+        "productImage": "img/goods-1.jpg",
+        "parts": [
+          {
+            "partsId": "10001",
+            "partsName": "手套"
+          },
+          {
+            "partsId": "10002",
+            "partsName": "围巾"
+          }
+        ]
+      },
+      {
+        "productId": "600100002120",
+        "productName": "安德玛高尔夫帽子",
+        "productPrice": 8,
+        "productQuentity": 5,
+        "productImage": "img/goods-2.jpg",
+        "parts": [
+          {
+            "partsId": "20001",
+            "partsName": "眼镜"
+          }
+        ]
+      }
+    ]
+  },
+  "massage": ""
+}

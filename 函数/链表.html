@@ -1,0 +1,91 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<!--链表包含两个类。Node 类用来表示节点，LinkedList 类提供了插入节点、删除节点、显示列表元素的方法，以及其他一些辅助方法。-->
+<script type="text/javascript">
+    function Node(element) {
+        this.element = element; //保存节点上的数据,属性
+        this.next = null; //保存指向下一个节点的链接，属性
+    }
+
+    function LList() {
+        this.head = new Node('head');
+        this.find = find;
+        this.insert = insert; //向链表中插入一个节点
+        this.remove = remove;
+        this.display = display;
+        this.findPrevious = findPrevious;
+    }
+    //head 节点的 next 属性被初始化为 null，当有新元素插入时，next 会指向新的元素，所以在这里没有修改 next 的值。
+
+    //在一个已知节点后面插入元素时，先要找到“后面”的节点。
+    function find(item) {
+        //创建一个新节点，将链表的头节点赋给这个新创建的节点
+        var currNode = this.head;
+        //如果当前节点的element属性和要找的信息不符
+        while (currNode.element != item) {
+            //从当前节点移动到下一个节点
+            currNode = currNode.next;
+        }
+        return currNode;
+    }
+
+    function insert(newElement, item) {
+        var newNode = new Node(newElement);
+        var current = this.find(item);
+        //新节点的 next 属性设置为“后面”节点的 next 属性对应的值
+        newNode.next = current.next;
+        //设置“后面”节点的 next 属性指向新节点
+        current.next = newNode;
+    }
+    // display() 方法，该方法用来显示链表中的元素:
+    function display() {
+        //先将列表的头节点赋给一个变量
+        var currNode = this.head;
+        //当前节点的 next 属性为 null 时循环结束
+        while (currNode.next != null) {
+            //为了只显示包含数据的节点(不显示头节点)，程序只访问 当前节点的下一个节点中保存的数据:
+            console.log(currNode.next.element);
+            currNode = currNode.next;
+        }
+    }
+
+    //删除节点时，需要先找到待删除节点前面的节点。找到这个节点后，修改它的 next 属性，使其不再指向待删除节点，而是指向待删除节点的下一个节点。我们可以定义 一个方法 findPrevious()，来做这件事。该方法遍历链表中的元素，检查每一个节点的下 一个节点中是否存储着待删除数据。如果找到，返回该节点(即“前一个”节点)，这样 就可以修改它的 next 属性了
+    function findPrevious(item) {
+        var currNode = this.head;
+        while (currNode.next != null && (currNode.next.element != item)) {
+            currNode = currNode.next
+        }
+        return currNode;
+    }
+
+    function remove(item) {
+        var prevNode = this.findPrevious(item);
+        if (prevNode.next != null) {
+            //让“前一个”节点指向了待删除节点的后一个节点
+            prevNode.next = prevNode.next.next;
+        }
+    }
+
+    var cities = new LList();
+    debugger;
+    cities.insert("Conway", "head");
+    cities.insert("Russellville", "Conway");
+    cities.insert("Carlisle", "Russellville");
+    cities.insert("Alma", "Carlisle");
+
+    cities.display();
+    console.log();
+    cities.remove("Carlisle");
+    cities.display();
+</script>
+
+</body>
+
+</html>
