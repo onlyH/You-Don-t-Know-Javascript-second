@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品越酸</title>
+    <style>
+        .box{
+            width: 600px;
+            border:1px solid #cccccc;
+        }
+        li{
+            height: 30px;
+            border:1px solid red;
+            display: inline-block;
+        }
+        input{
+            width: 40px;
+            height: 40px;
+            border:1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="list">
+        <li>11</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p>单价：88</p>
+    <input type="button" value="-" class="jian">
+    <input type="text" value="1" class="sale">
+    <input type="button" value="+" class="add">
+</div>
+<script>
+var jian = document.querySelector('.jian');
+var sale = document.querySelector('.sale')
+    jian.onclick = function () {
+        sale.value= parseInt(jian.value++);
+    }
+</script>
+</body>
+</html>

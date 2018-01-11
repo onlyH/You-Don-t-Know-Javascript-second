@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="txt1" value="this is test">
+<input type="button" value="test" onclick="javascript:chk(txt1.value)">
+<script>
+    var bfir = false;
+    var ch;
+    var strs = new Array('<', '>', '.');
+    function chk(str) {
+//        遍历非法字符
+        for (var i = 0; i < strs.length; i++) {
+//            遍历
+            for (var j = 0; j < str.length; j++) {
+                ch === str.substr(j, 1);
+                if (ch === strs[i]) {
+                    strs = true;
+                }
+            }
+        }
+        if (strs) {
+            alert('nonono')
+        }
+    }
+</script>
+</body>
+</html>

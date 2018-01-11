@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea cols="50" rows="10" oncopy="document.selection.empty()"
+          onpaste="return false">lalalalalalalalallaal</textarea>
+</body>
+</html>
+<!--oncopy表示用户的复制事件，当用户复制文本时，返回的时document.selection.empty（），表示不选择任何内容，即使用户选择了内容，此事件依然返回空-->
+<!--onpaste表示用户黏贴事件，返回false表示不执行任何操作-->

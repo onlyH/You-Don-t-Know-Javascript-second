@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="submitform" onsubmit="return checkfields()">
+    名字和邮箱只需要输入一个即可
+    <br><br>
+    <table border="0">
+        <tr>
+            <td align="center">name</td>
+            <td></td>
+
+            <td align="center">email</td>
+        </tr>
+
+        <tr>
+            <td align="center">
+                <input type="text" name="name" value="" onfocus="document.submitform.email.value='';" size="10">
+            </td>
+            <td align="center">or</td>
+            <td align="center">
+                <input type="text" name="email" value="" onfocus="document.submitform.name.value='';" size="10">
+            </td>
+
+        </tr>
+
+        <tr>
+            <td align="center" colspan="3">
+                <input type="submit" value="save">
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        function checkfields() {
+            name = document.submitform.name.value;
+            email = document.submitform.email.value;
+            if (name === "" && email === "") {
+                alert('name or email');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</form>
+</body>
+</html>
+<!--onfocus事件，子啊文本框获得焦点时触发，当文本获取焦点时，会将另一个文本框的值清空，document.sybmitform.email.value="-->

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="" id="txt" cols="30" rows="10" onpropertychange="abc(this.value)"></textarea>
+<script>
+    var a = document.getElementById('txt')
+    function abc(content) {
+        if (content.length > 2) {
+            a.value = a.value.substring(0, 2)
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<textarea id="mytxt" cols="30" rows="10"></textarea>
+<input type="button" id="mybtn" value="all select">
+<script>
+    function selectAll() {
+        mytxt.select();
+    }
+    var a = document.getElementById('mybtn');
+    a.onclick = function () {
+        selectAll();
+    }
+</script>
+</body>
+</html>
+<!--select方法，可以实现文本框内容的全部选择，对所有input都有效-->

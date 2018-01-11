@@ -225,3 +225,56 @@ scaning links#abc #def #ghi
 loding data###data###
 link detection started
 scaning linkshttp://baidu.com http://taobao.com http://tmall.com*/
+
+
+function Stack() {
+    this.dataStore = [];
+    this.top = 0;
+    this.length = length;
+    this.push = push;
+    this.pop = pop;
+    this.peek = peek;//查找
+
+}
+
+function push(element) {
+    this.dataStore[this.top++] = element;
+}
+
+function peek(element) {
+    return this.dataStore[this.top -1];
+}
+
+function pop() {
+    return this.dataStore[--this.top];
+}
+function clear() {
+    this.top = 0;
+}
+function length() {
+    return this.top;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

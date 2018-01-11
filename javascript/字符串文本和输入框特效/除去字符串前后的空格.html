@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="txt1" value="space">
+<input type="button" value="del soace" name="btn1" onclick="killspace(txt1)">
+<script>
+    function killspace(txtvalue) {
+//        判断文本内容是否为空，判断第一个字符是否为空格
+        if (txtvalue.value.length > 0 && txtvalue.value.charAt(0) == ' ')
+//            从第二位开始数
+            txtvalue.value = txtvalue.value.substring(1, txtvalue.length);
+//        判断文本的长度
+        if (txtvalue.value.length > 0 && txtvalue.value.charAt(txtvalue.value.length - 1 == ' '))
+//        去掉最后一位
+            txtvalue.value = txtvalue.value.substring(0, txtvalue.value.length - 1);
+
+    }
+</script>
+</body>
+</html>
+<!--charAt判断的第一个是否为空格 ，如是，使用substring方法截取从第一位开始的字符串-->
