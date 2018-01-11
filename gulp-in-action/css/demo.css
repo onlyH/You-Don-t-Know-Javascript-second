@@ -1,8 +1,0 @@
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.aa {
-  -webkit-animation: .25s, 100ms;
-          animation: .25s, 100ms; }
